@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+    overflow: hidden;
+    background-color: white !important;
+}
+
+
+.header{
+  width: 100%;
+  background-color: #0f4fb0;
+  display: flex;
+}
+
+.header > .left{
+  padding-block:10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  user-select: none;
+  color: aliceblue;
+
+  font-size: 26px;
+  width: 250px;
+  background-color: #0f4fb0;
+}
+
+.header > .logoIcon{
+  font-size: 10px !important;
+}
+
+
+.main{
+  height: calc(100vh - 59px);
+  width: 100vw;
+  display: flex;
+}
+
+
+.panel{
+  width: 150px;
+  background-color: #0f4fb0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-block: 20px;
+}
+
+.PanelButton{
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #296bcf;
+  border: none;
+  width: 100%;
+  height: 60px;
+  font-size: 18px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.ButtonIcon{
+  margin-right: 10px;
+  margin-top: -2px;
+  font-size: 30px;
+}
+
+
+
+.user{
+  color: white;
+  margin-top: auto;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #0f4fb0;
+
+}
+
+.user > .userIcon{
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.logout{
+  height: 60px;
+  background-color: #1a4a92;
+  cursor: pointer;
+  font-size: 16px;
+
+  margin-left: 0px !important;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  /* height: 500px; */
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+  padding-block: 40px;
+}
+
+
+.login > h2{
+  text-align: center;
+  padding: 30px;
+}
+
+
+.loginButtons{
+  display: flex;
+  align-items: center;
+
+  
+  height: 70px;
+}
+
+.loginButtons div{
+  text-decoration: underline;
+}
+
+.loginButtons div:hover{
+  color: #0f4fb0;
+  cursor: pointer;
+}
+
+.submitButton{
+  margin-left: auto;
+  padding-inline: 20px !important;
+}
+
+.logo{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  display: flex;
+  align-items: center;
+}
+
+.logoRegister{
+  top:10%
+}
+
+.logo > .logoIcon{
+  font-size: 80px;
+}
+
+.logo > .name{
+  font-size: 60px;
+  margin-left: 15px;
+  user-select: none;
+}
+
+.background > img{
+  width: 100vw;
+  opacity: 80%;
+
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.outerSpinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.outerSpinner > p{
+  /* color: white; */
+
+  margin-top: 10px;
+  font-size: 26px;
+}
+
+.outerSpinner > p::after{
+  content: "";
+  animation: 2s infinite dots;
+}
+
+@keyframes dots {
+  0%{
+    content: "";
+  }
+
+  25%{
+    content: ".";
+  }
+
+  50%{
+    content: "..";
+  }
+
+  75%{
+    content: "...";
+  }
+  
+  100%{
+    content: "";
+  }
+}
+
+
+.content{
+  width: calc(100% - 250px);
+  flex-grow: 1;
+  height: 100%;
+  margin: 0 !important;
+  margin-top: 30px !important;
+  display: flex;
+  justify-content: center;
+  user-select: none !important;
+}
+
+.filters{
+  display: flex;
+  align-items: center;
+}
+
+.searchButton{
+  margin-top: auto;
+  margin-left: 20px;
+  margin-right: 50px;
+}
+
+.createButton{
+  margin-top: 20px;
+}
+
+.userSelect{
+  width: 300px;
+}
+
+.statusPrioSelect{
+  width: 200px;
+}
+
+.filterGroup{
+  user-select: none !important;
+  margin-left: 50px;
+}
+
+.creatorGroup{
+  margin-left: auto;
+}
+
+.issuesColumnNames{
+  scrollbar-gutter: stable;
+  user-select: none;
+  display: flex;
+  margin-block: 15px;
+  padding-bottom: 15px;
+  margin-top: 30px;
+  border-bottom: 2px solid rgb(189, 189, 189);
+  font-size: 20px;
+}
+
+.issuesColumnNames > .id{
+  width: 150px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+.inactive-filter .dropdown-toggle::after {
+    display: none !important;
+}
+
+.issuesColumnNames > .title{
+  width: 1150px;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+.issuesColumnNames > .assignee, .creator{
+  width: 200px;
+
+  font-weight: bold;
+}
+
+.issuesColumnNames > .priority{
+  width: 100px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+.issuesColumnNames > .status{
+  width: 100px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 18px;
+}
+
+.Issues{
+  width: 90%;
+  position: relative;
+  font-size: 16px;
+}
+
+#searchInput{
+  width: 600px;
+}
+
+.outerCards{
+  height: 64%;
+  overflow: auto;
+}
+
+.IssueCard{
+  display: flex;
+  align-items: center;
+  height: 60px;
+  transition: 0.2s;
+  cursor: pointer;
+  font-size: 17px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+
+}
+
+.IssueCard:hover{
+  background-color: rgb(144, 188, 255);
+}
+
+.issuePriority > h5, .issueStatus > h5{
+  margin: 0;
+}
+
+
+
+.issueId{
+  width: 150px;
+  text-align: center;
+}
+
+
+.issueTitle{
+  user-select: text;
+  width: 1150px;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.outerImage{
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background-color: rgb(52, 52, 52);
+  margin-right: 10px;
+  border-radius: 100%;
+}
+
+.profilePicture{
+  max-width: 25px;
+  max-height: 25px;
+  border-radius: 100%;
+  filter: invert(1);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.issueAssignee{
+  width: 200px;
+  display: flex;
+  align-items: center;
+
+}
+
+
+
+.issueCreator{
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.issueCreator p{
+  display: inline;
+}
+
+
+.issuePriority{
+  width: 100px;
+  text-align: center;
+}
+
+.issueStatus{
+  width: 100px;
+  text-align: center;
+}
+
+
+.High{
+  background-color: #d13e2b !important;
+}
+
+
+.Medium{
+  background-color: #ffbe57 !important;
+}
+
+
+.Low{
+  background-color: #57cfff !important;
+}
+
+
+.Critical{
+  background-color: #000000 !important;
+  color: white;
+}

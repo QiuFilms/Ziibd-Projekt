@@ -1,0 +1,65 @@
+.Issue{
+    width: 90%;
+
+}
+
+.reportButtons{
+    display: flex;
+    align-items: center;
+    width: 90%;
+}
+
+.backButton{
+    cursor: pointer;
+}
+
+.saveButton{
+    margin-left: auto;
+}
+
+.Issue > .title{
+    margin-top: 20px;
+    font-size: 30px;
+    width: 90%;
+    display: flex;
+    border-bottom: 2px solid rgb(169, 169, 169);
+}
+
+
+.reportTitle{
+    margin-left: 10px;
+    flex-grow: 1;
+    padding-inline: 5px;
+}
+
+.outerSaveButton{
+    width: 15%;
+}
+
+.outerSaveButton > .saveButton{
+    float: right;
+}
+
+.innerContents{
+    margin-top: 20px;
+    display: flex;
+    width: 90%;
+}
+
+.innerContents > .description{
+    width: 85%;
+    padding: 5px;
+    font-size: 18px;
+    border: 2px solid rgb(169, 169, 169);
+}
+
+.informations{
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.toast{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
