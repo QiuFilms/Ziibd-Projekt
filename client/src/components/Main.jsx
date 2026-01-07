@@ -17,7 +17,7 @@ export default function Main(){
             <div className="header">
                 <div className="left">
                     <SiHelpscout className="logoIcon"/>
-                    HP Equilibrium
+                    HD Equilibrium
                 </div>
                 <div className="right">
 
