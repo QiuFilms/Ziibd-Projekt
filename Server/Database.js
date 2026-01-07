@@ -3,12 +3,11 @@ import path from "path/win32";
 import bcrypt from "bcryptjs";
 
 
-
 export default class Database{
 
 
-    static async init(ip, sid, username, password){
-        let libPath = path.join(process.cwd(), 'instantclient_18_5');
+    static async init(connstring, username, password){
+        let libPath = path.join(process.cwd(), 'instantclient_19_25');
         // let libPath = '/app/instantclient_19_29';
 
         console.log("🔶 Init Oracle Client from:", libPath);
@@ -26,7 +25,7 @@ export default class Database{
         await OracleDB.createPool({
             user: username,
             password: password,
-            connectString: `${ip}/${sid}`,
+            connectString: connstring,
             poolMin: 1,
             poolMax: 10,
             poolTimeout: 300,

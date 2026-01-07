@@ -1,1 +1,1 @@
-export const API = "https://express-api-87895858770.us-central1.run.app"
+export const API = "https://express-api-87895858770.europe-central2.run.app"

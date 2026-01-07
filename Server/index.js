@@ -7,7 +7,7 @@ app.use(cors())
 app.use(express.json())
 
 async function connectToDatabase(){
-    await (await Database.init()).connect()
+    await (await Database.init(process.env.DB_CONNECTION_STRING,  process.env.DB_USER, process.env.DB_PASSWORD)).connect()
 }
 await connectToDatabase()
 
