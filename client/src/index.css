@@ -116,7 +116,7 @@ body {
   /* height: 500px; */
   background-color: rgb(255, 255, 255);
   padding: 50px;
-  padding-block: 40px;
+  padding-block: 10px;
 }
 
 
@@ -157,6 +157,15 @@ body {
   align-items: center;
 }
 
+.logoLogin{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  display: flex;
+  align-items: center;
+}
+
 .logoRegister{
   top:10%
 }
@@ -171,12 +180,24 @@ body {
   user-select: none;
 }
 
-.background > img{
+/* .background > img{
   width: 100vw;
   opacity: 80%;
-
   user-select: none;
   -webkit-user-drag: none;
+} */
+
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Prevents accidental scrollbars */
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This is the key change */
 }
 
 .outerSpinner{
@@ -239,6 +260,21 @@ body {
 .filters{
   display: flex;
   align-items: center;
+  flex-wrap: wrap; 
+  align-items: flex-end; /* Keeps labels and inputs aligned at the bottom */
+  gap: -15px;
+}
+
+@media (max-width: 1500px) {
+  
+  /* Force the Search Button to take up the remaining width of the first row */
+  /* Or use a specific width to trigger the wrap for the following elements */
+  .searchButton {
+    margin-right: calc(100% - 200px); /* Adjust 200px to your button's width */
+  }
+  
+  /* Alternative: Force the button to 100% width to act as a 'break' */
+  /* .searchButton { width: 100%; } */
 }
 
 .searchButton{

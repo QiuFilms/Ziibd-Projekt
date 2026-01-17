@@ -191,6 +191,22 @@ export default class Database{
         )
     }
 
+    static async deleteIssue({reportId}){
+        await this.connection.execute(`DELETE FROM report_history WHERE report_id = :repordId`,    
+            {
+                repordId: reportId,
+            }
+        )
+
+        await this.connection.execute(`DELETE FROM reports WHERE report_id = :repordId`,    
+            {
+                repordId: reportId,
+            }
+        )
+
+
+    }
+
 
 
     static async getAllUsers(){

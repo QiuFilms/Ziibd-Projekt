@@ -79,8 +79,6 @@ app.post('/get-issues', async (req, res) => {
 })
 
 app.post('/add-issue', async (req, res) => {
-        console.log("Issue: " + req.body);
-
     try {
         await Database.addIssue(req.body)
         await Database.connection.commit()
@@ -122,6 +120,49 @@ app.get('/users', async (req, res) => {
         })
     } catch (error) {
         res.status(500).json({
+            message: 'Server error: ' + error.message 
+        });
+    }
+})
+
+
+app.delete('/delete-report', async (req, res) => {
+    const { username, password } = req.body; 
+    try {
+        const user = await Database.login(username, password);
+        
+        if (!user) {
+            return res.status(401).json({
+                message: 'Invalid credentials' 
+            });
+        }
+
+        res.status(200).json({
+            data: user
+        });
+    } catch (error) {
+        console.log(error);
+        
+        res.status(500).json({ 
+            message: 'Server error: ' + error.message 
+        });
+    }
+})
+
+app.post('/delete-issue', async (req, res) => {
+    console.log(111);
+    
+    try {
+        await Database.deleteIssue(req.body);
+        await Database.connection.commit()
+
+
+        res.status(200).send()
+    } catch (error) {
+        console.log(error);
+        await Database.connection.rollback();
+        
+        res.status(500).json({ 
             message: 'Server error: ' + error.message 
         });
     }

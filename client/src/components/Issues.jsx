@@ -139,7 +139,7 @@ export default function Issues(){
                 :
                 <div className="Issues">
 
-                    <div >
+                    <div className='outerSearch'>
                         <Form noValidate validated={0} onSubmit={handleSearch} className="filters">
                             <Form.Group>
                                 <Form.Label htmlFor="searchInput">Search</Form.Label>

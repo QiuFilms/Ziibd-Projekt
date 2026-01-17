@@ -66,7 +66,7 @@ export default function Login({setIsRegister}){
 
     return(
         <>
-            <div className="logo">
+            <div className="logo logoLogin">
                 <SiHelpscout className='logoIcon'/>
                 <div className="name">
                     HD Equilibrium

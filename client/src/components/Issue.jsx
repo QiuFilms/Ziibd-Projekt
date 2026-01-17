@@ -58,7 +58,27 @@ export default function Issue({issue, allUsers, setOpenFunction, refreshIssues})
             
         if(response.ok){
             toggleShowA()
-            refreshIssues()        
+            await refreshIssues()        
+        }else{
+            toggleShowB()
+        }
+    }
+
+    const handleDelete = async () => {
+        const response = await fetch(new URL("delete-issue", API), {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    reportId: issue.REPORT_ID
+                })
+            });
+
+        if(response.ok){
+            await refreshIssues()        
+            setOpenFunction(null)
+
         }else{
             toggleShowB()
         }
@@ -141,6 +161,8 @@ export default function Issue({issue, allUsers, setOpenFunction, refreshIssues})
                     </div>
 
                     <Button variant="primary" className="saveButton mt-4" onClick={handleSave}>Save</Button>
+                    <Button variant="danger" className="deleteButton mt-4 ms-3" onClick={handleDelete}>Delete</Button>
+
 
                 </div>
                 {/* <div className="history">
